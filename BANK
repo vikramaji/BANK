@@ -1,0 +1,107 @@
+#import <Foundation/Foundation.h>
+@interface Bank:NSObject
+ int display();
+ bool add();
+ bool withdraw();
+ bool deposite();
+ bool delete();
+ bool status();
+ 
+@end;
+@implementation Bank
+
+NSMutableArray *name;
+    
+    int display()
+    {
+        int n;
+    //    NSLog(@"n===%d",a);
+        NSLog(@"$-********* V Bank Of India *********-$");
+        NSLog(@"$-*     1 - Add Customer            *-$");
+        NSLog(@"$-*     2 - Withdraw                *-$");
+        NSLog(@"$-*     3 - Deposite                *-$");
+        NSLog(@"$-*     4 - Status of Customer      *-$");
+        NSLog(@"$-*     5 - Delete Customer         *-$");
+        NSLog(@"$-*     6 - Exit                    *-$");
+        NSLog(@"$-********* Thank You       *********-$");
+        scanf("%d",&n);
+        return n;
+    }
+    bool add()
+    {
+            name = [[NSMutableArray alloc]initWithCapacity:1];
+            [name addObject:@"Eezy"];
+            [name addObject:@"Tutorials"];
+            NSLog(@"%@",name);
+            return true;
+    }
+     bool withdraw()
+    {
+            return true;
+    }
+     bool deposite()
+    {
+            return true;
+    }
+     bool delete()
+    {
+            return true;
+    }
+     bool status()
+    {
+            return true;
+    }
+@end;
+int main ()
+{
+   
+    int res=0;
+    bool b;
+    while(res!=6)
+    {
+         res=display();
+         switch(res)
+         {
+            case 1:
+                b=add();
+                if(b)
+                    NSLog(@"             Customer Add Successfully");
+                else
+                    NSLog(@"            Something Problem");
+                break;
+            case 2:
+                b=withdraw();
+                if(b)
+                    NSLog(@"             Withdraw Operation Successfully");
+                else
+                    NSLog(@"             Withdraw Operation Failed");
+                break;
+            case 3:
+                b=deposite();
+                if(b)
+                    NSLog(@"             Deposite Operation Successfully");
+                else
+                    NSLog(@"             Deposite Operation Failed");
+                break;
+            case 4:
+                b=delete();
+                if(b)
+                    NSLog(@"             Customer Record Deleted");
+                else
+                    NSLog(@"             Delete Operation Failed");
+                break;
+            case 5:
+                b=status();
+                if(b)
+                    NSLog(@"              Thanku");
+                else
+                    NSLog(@"              Operation Failed");
+                break;
+         }
+         
+    }
+   
+   
+   
+   return 0;
+}
